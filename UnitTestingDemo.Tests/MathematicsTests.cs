@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using System;
+using Xunit;
 
 namespace UnitTestingDemo.Tests
 {
@@ -24,6 +25,13 @@ namespace UnitTestingDemo.Tests
         {
             var math = new Mathematics();
             Assert.Equal(expected, math.Divide(x, y));
+        }
+
+        [Fact]
+        public void TestDivisionByZeroReturnsInfinity()
+        {
+            var math = new Mathematics();
+            Assert.Throws<ArgumentException>(() => math.Divide(2, 0));
         }
     }
 }
