@@ -24,14 +24,14 @@ namespace UnitTestingDemo.Tests
         public void TestDivideReturnsCorrectValue(decimal x, decimal y, decimal expected)
         {
             var math = new Mathematics();
-            Assert.Equal(expected, math.Divide(x, y));
+            Assert.Equal(expected, math.Divide(x, y).Result);
         }
 
         [Fact]
-        public void TestDivisionByZeroReturnsInfinity()
+        public void TestDivisionByZeroReturnsZero()
         {
             var math = new Mathematics();
-            Assert.Throws<ArgumentException>(() => math.Divide(2, 0));
+            Assert.Equal(0, math.Divide(2, 0).Result);
         }
     }
 }

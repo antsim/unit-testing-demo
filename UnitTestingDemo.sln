@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestingDemo", "UnitTestingDemo\UnitTestingDemo.csproj", "{2C90B50A-E06C-409F-AB70-E481689AB4E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTestingDemo", "UnitTestingDemo\UnitTestingDemo.csproj", "{2C90B50A-E06C-409F-AB70-E481689AB4E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestingDemo.Tests", "UnitTestingDemo.Tests\UnitTestingDemo.Tests.csproj", "{784A8829-28F0-4239-B2B9-4166340BE7A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTestingDemo.Tests", "UnitTestingDemo.Tests\UnitTestingDemo.Tests.csproj", "{784A8829-28F0-4239-B2B9-4166340BE7A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestingDemo.API", "UnitTestingDemo.API\UnitTestingDemo.API.csproj", "{8D2FE70A-0C7D-4C29-BF77-A8483CC1C8A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestingDemo.Core", "UnitTestingDemo.Core\UnitTestingDemo.Core.csproj", "{50E04862-DAA2-45F5-9020-184F437C7E79}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{784A8829-28F0-4239-B2B9-4166340BE7A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{784A8829-28F0-4239-B2B9-4166340BE7A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{784A8829-28F0-4239-B2B9-4166340BE7A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D2FE70A-0C7D-4C29-BF77-A8483CC1C8A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D2FE70A-0C7D-4C29-BF77-A8483CC1C8A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D2FE70A-0C7D-4C29-BF77-A8483CC1C8A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D2FE70A-0C7D-4C29-BF77-A8483CC1C8A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50E04862-DAA2-45F5-9020-184F437C7E79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50E04862-DAA2-45F5-9020-184F437C7E79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50E04862-DAA2-45F5-9020-184F437C7E79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50E04862-DAA2-45F5-9020-184F437C7E79}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
