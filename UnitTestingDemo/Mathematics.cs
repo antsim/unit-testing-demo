@@ -1,16 +1,21 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Globalization;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using UnitTestingDemo.Core;
+using UnitTestingDemo.Services;
 
 namespace UnitTestingDemo
 {
     public class Mathematics
     {
+        private readonly IMathService mathService;
+        public Mathematics(IMathService mathService)
+        {
+            // Currently this will always be null if this application would be actually run
+            // to inject dependencies runtime, you can use DI libraries like Ninject (basic) or Autofac (advanced)
+            // you would basically just say 
+            // Bind<IMathService>.To<MathService>();
+            this.mathService = mathService;
+        }
+
         public int Multiply(int x, int y)
         {
             return x * y;
@@ -18,24 +23,7 @@ namespace UnitTestingDemo
 
         public async Task<decimal> Divide(decimal x, decimal y)
         {
-            using (var client = new HttpClient())
-            {
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-                var request = new DivisionRequest()
-                {
-                    X = x,
-                    Y = y
-                };
-
-                var content = new StringContent(JsonConvert.SerializeObject(request), Encoding.UTF8, "application/json");
-
-                var response = await client.PostAsync("http://localhost:58858/api/math/divide", content);
-                var contents = response.Content.ReadAsStringAsync();
-
-                return decimal.Parse(contents.Result, CultureInfo.InvariantCulture);
-            }
+            return await mathService.Divide(new DivisionRequest {X = x, Y = y});
         }
     }
 }
